@@ -1,0 +1,492 @@
+:root {
+    --primary-color: #2d3436;
+    --accent-color: #0984e3;
+    --text-color: #2d3436;
+    --light-bg: #f5f6fa;
+    --white: #ffffff;
+    --gray: #b2bec3;
+    --sidebar-width: 280px;
+}
+
+/* Base styles with better defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for rem units */
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Improved Side Navigation */
+.side-nav {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1000;
+}
+
+.nav-profile {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--gray);
+    margin: 0 auto 1rem;
+}
+
+.nav-profile h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-profile .title {
+    color: var(--accent-color);
+    font-size: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    padding: 0.8rem 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: auto;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 2rem;
+    width: calc(100% - var(--sidebar-width));
+    overflow-x: hidden;
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.content-box {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    line-height: 1.6;
+}
+
+.content-box ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Timeline */
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--accent-color);
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.date {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0769b3;
+}
+
+/* Enhanced Responsive Design */
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --sidebar-width: 100%;
+    }
+
+    body {
+        flex-direction: column;
+    }
+
+    .side-nav {
+        height: auto;
+        position: relative;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .profile-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+
+    .projects-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .content-box {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+
+    .content-box {
+        padding: 0.75rem;
+    }
+
+    .skill-tags {
+        gap: 0.25rem;
+    }
+
+    .skill-tag {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Cross-browser flexbox improvements */
+.skills-grid,
+.projects-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-category,
+.project-card {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 300px;
+    flex: 1 1 300px;
+}
+
+/* Better touch interactions */
+@media (hover: hover) {
+    .nav-links a:hover,
+    .project-card:hover,
+    .skill-tag:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Print styles */
+@media print {
+    .side-nav {
+        display: none;
+    }
+
+    .main-content {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .content-box {
+        box-shadow: none;
+        border: 1px solid var(--gray);
+    }
+
+    .project-card {
+        break-inside: avoid;
+    }
+}
+
+/* Fix for iOS Safari height issue */
+@supports (-webkit-touch-callout: none) {
+    .side-nav {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Smooth animations */
+.project-card,
+.skill-tag,
+.nav-links a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Better form controls for touch devices */
+@media (hover: none) {
+    input,
+    textarea,
+    select,
+    button {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .submit-btn {
+        padding: 1rem 2rem;
+        min-height: 44px; /* Minimum touch target size */
+    }
+}
+
+/* Fix for sticky hover states on mobile */
+@media (hover: none) {
+    .nav-links a:hover,
+    .project-card:hover,
+    .skill-tag:hover {
+        transform: none;
+    }
+}
+
+/* Add these styles for the profile image */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    background-color: var(--gray); /* Fallback if image fails to load */
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center -10px;
+    display: block; /* Ensures no extra space */
+}
+
+/* Update media query for mobile */
+@media screen and (max-width: 768px) {
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        border-width: 2px;
+    }
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-color);
+}
+
+.contact-info a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+} 
